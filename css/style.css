@@ -397,7 +397,10 @@ footer {
   }
 }
 @media (max-width: 528px) {
-  .nav-icon {
+  .nav-list {
+    width: 40%;
+  }
+  /* .nav-icon {
     display: flex;
   }
   nav .nav-list {
@@ -420,7 +423,7 @@ footer {
   }
   .nav-list.slide {
     transform: translateX(0);
-  }
+  } */
 }
 @media (max-width: 479px) {
   section {
