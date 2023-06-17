@@ -56,7 +56,7 @@ nav {
   transition: 0.1s all;
 }
 .nav-list li a:hover {
-  color: var(--second-color);
+  color: var(--second-dark-color);
 }
 .hamburger-menu label {
   display: flex;
