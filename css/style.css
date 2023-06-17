@@ -7,14 +7,15 @@
   outline-style: none;
   border: none;
   scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 /* variables */
 :root {
-  --container-color: #0f1021;
-  --second-color: #9d0b28;
+  --container-color: #a0c49d;
+  --second-color: #83764f;
   --second-dark-color: #69091c;
-  --text-color: #172317;
-  --bg-color: #f3efe0;
+  --text-color: #e1ecc8;
+  --bg-color: #effcef;
 }
 body {
   overflow-x: hidden;
@@ -33,7 +34,7 @@ nav {
 }
 .logo {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 800;
   color: var(--bg-color);
 }
 .logo span {
@@ -105,7 +106,6 @@ section {
 }
 .hero {
   width: 100%;
-  height: 300px;
   align-items: center;
   display: flex;
 }
@@ -147,8 +147,8 @@ section {
   align-items: center;
 }
 .minihero img {
-  width: 330px;
-  border-radius: 20px;
+  width: 310px;
+  border-radius: 50em;
   position: absolute;
 }
 @keyframes animatemain {
@@ -157,12 +157,11 @@ section {
   }
 }
 .background-img {
-  background-color: #b41717;
+  background-color: var(--second-color);
   width: 200px;
   height: 200px;
   border-radius: 60% 30% 60%;
-  box-shadow: 10px 10px 16px rgba(255, 143, 143, 0.5);
-  animation: animatemain 9s ease infinite;
+  animation: animatemain 1s forwards;
 }
 /* about */
 #about h1 {
@@ -191,34 +190,23 @@ section {
   gap: 20px;
 }
 .box-skills {
-  width: 90%;
-  padding: 30px;
+  width: 95%;
+  overflow: hidden;
   flex-wrap: wrap;
   display: flex;
   gap: 15px;
   justify-content: center;
   align-items: center;
-  box-shadow: 3px 3px 10px rgba(153, 153, 153, 0.5);
   border-radius: 20px;
 }
-.bubble {
-  width: 100px;
-  height: 30px;
-  padding: 10px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9rem;
-  font-weight: 500;
-  box-shadow: 2px 2px 10px rgba(153, 153, 153, 0.5);
-  color: var(--container-color);
-  transition: all 0.1s;
+.box-skills.text {
+  overflow: visible;
 }
-.bubble:hover {
-  animation: animatemain 3s ease infinite;
-  box-shadow: 3px 3px 16px rgba(79, 255, 108, 0.5);
-  color: var(--second-color);
+.container-skill img {
+  width: 100%;
+}
+.skill-text {
+  font-size: 1.1rem;
 }
 /* gallery */
 #gallery h1 {
@@ -247,9 +235,9 @@ section {
   object-fit: cover;
   border-radius: 10px;
 }
-.box-gallery h3 {
+.box-gallery span {
   padding: 3px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   align-items: center;
   padding: 10px;
 }
@@ -353,6 +341,16 @@ footer {
   .hero-text h1 {
     font-size: 1.8rem;
   }
+  .about-text {
+    font-size: 0.75rem;
+  }
+  .skill-text {
+    font-size: 0.9rem;
+  }
+
+  .box-gallery img {
+    width: 280px;
+  }
 }
 @media (max-width: 768px) {
   .nav-list {
@@ -384,24 +382,29 @@ footer {
   .container-skill {
     justify-content: center;
   }
-  .bubble {
-    width: 70px;
-    height: 20px;
-    font-size: 0.8rem;
-    padding: 5px;
-  }
-  .box-skills {
-    padding: 10px;
+  .skill-text {
+    font-size: 0.6rem;
   }
   .form-contact {
     width: 400px;
   }
+  .box-skills img {
+    aspect-ratio: 4/4;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .skill-text {
+    font-size: 0.8rem;
+  }
+  .box-gallery img {
+    width: 330px;
+  }
 }
-@media (max-width: 528px) {
+@media (max-width: 568px) {
   .nav-list {
     width: 40%;
   }
-  /* .nav-icon {
+  .nav-icon {
     display: flex;
   }
   nav .nav-list {
@@ -424,7 +427,22 @@ footer {
   }
   .nav-list.slide {
     transform: translateX(0);
-  } */
+  }
+  .about-text {
+    font-size: 0.65rem;
+  }
+  .skill-text {
+    font-size: 0.65rem;
+  }
+  #about .title,
+  #skill .title,
+  #gallery .title,
+  #contact .title {
+    font-size: 1rem;
+  }
+  .box-gallery span {
+    font-size: 0.8rem;
+  }
 }
 @media (max-width: 479px) {
   section {
@@ -439,20 +457,21 @@ footer {
   }
   .hero {
     align-items: start;
-    height: 150px;
+  }
+  .hero-text h1 {
+    font-size: 1.4rem;
   }
   .minihero {
-    height: 300px;
+    height: 230px;
   }
   .minihero img {
-    width: 220px;
+    width: 180px;
   }
   .background-img {
     width: 100px;
     height: 100px;
   }
   #about h1 {
-    font-size: 1.4rem;
     text-align: start;
   }
   .container-about {
@@ -460,17 +479,18 @@ footer {
   }
   .about-text {
     text-align: start;
-    font-size: 0.95rem;
+    font-size: 0.6rem;
   }
-  .container-skill {
-    flex-wrap: wrap;
+  .box-skills img {
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 20px;
   }
-  .box-skills {
-    width: 250px;
-    height: 190px;
+  .skill-text {
+    font-size: 0.4rem;
   }
   .box-gallery img {
-    width: 230px;
+    width: 300px;
   }
   .form-contact {
     width: 220px;
@@ -482,10 +502,10 @@ footer {
   }
 }
 @media (max-width: 320px) {
-  .minihero {
-    height: 350px;
+  .skill-text {
+    font-size: 0.35rem;
   }
-  .minihero img {
+  .box-gallery img {
     width: 200px;
   }
 }
